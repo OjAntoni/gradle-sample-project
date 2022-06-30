@@ -35,6 +35,6 @@ heroku {
     appName = "gradle-sample-project"
     jdkVersion=11
     processTypes(
-            web: "java -jar  build/libs/gradle-sample-project-0.0.1-SNAPSHOT.jar"
+            web: "java -jar -Dserver.port=8081 build/libs/gradle-sample-project-0.0.1-SNAPSHOT.jar"
     )
 }
