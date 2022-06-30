@@ -3,23 +3,23 @@ pipeline {
 
     tools {
         // Install the Maven version configured as "M3" and add it to the path.
-        gradlew "gradle"
+        gradle "gradle"
     }
 
     stages {
         stage('Build') {
             steps {
-                sh "gradlew clean bootJar"
+                sh "gradle clean bootJar"
             }
         }
         stage('TEST'){
             steps {
-                sh "gradlew test"
+                sh "gradle test"
             }
         }
         stage('deploy'){
             steps {
-                sh "gradlew clean deployHeroku"
+                sh "gradle deployHeroku"
             }
         }
     }
